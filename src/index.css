@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Drape True Brand Colors */
+    --background: 240 40% 4%;       /* #07070F */
+    --foreground: 240 100% 97%;     /* #F0F0FF */
+
+    --card: 240 30% 8%;             /* #10101C */
+    --card-foreground: 240 100% 97%;
+
+    --popover: 240 30% 8%;
+    --popover-foreground: 240 100% 97%;
+
+    --primary: 265 100% 59%;        /* #7B2FFF */
+    --primary-foreground: 240 100% 97%;
+
+    --secondary: 240 25% 10%;       /* #14141F */
+    --secondary-foreground: 240 100% 80%;
+
+    --muted: 240 25% 12%;
+    --muted-foreground: 240 100% 50%;
+
+    --accent: 337 100% 59%;         /* #FF2D78 */
+    --accent-foreground: 240 100% 97%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 240 100% 97%;
+
+    --border: 240 15% 15%;
+    --input: 240 25% 12%;
+    --ring: 265 100% 59%;
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #07070F;
+    color: #F0F0FF;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* ── Primary Purple ── */
+  .text-primary-drape   { color: #7B2FFF; }
+  .bg-primary-drape     { background-color: #7B2FFF; }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, #7B2FFF, #A855F7);
+  }
+  .gradient-text-primary {
+    background: linear-gradient(135deg, #A78BFA, #7B2FFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── CTA Pink ── */
+  .text-cta             { color: #FF2D78; }
+  .bg-cta               { background-color: #FF2D78; }
+
+  .gradient-cta {
+    background: linear-gradient(135deg, #FF2D78, #FF6B9D);
+  }
+  .gradient-text-cta {
+    background: linear-gradient(135deg, #FF6B9D, #FF2D78);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── AI Teal ── */
+  .text-ai              { color: #00F0A0; }
+  .bg-ai                { background-color: #00F0A0; }
+
+  /* ── Hero gradient ── */
+  .gradient-hero {
+    background: linear-gradient(135deg, #7B2FFF 0%, #FF2D78 60%, #FF8C42 100%);
+  }
+  .gradient-text-hero {
+    background: linear-gradient(135deg, #A78BFA 0%, #FF2D78 55%, #FF8C42 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Glass panels ── */
+  .glass-panel {
+    background: rgba(16, 16, 28, 0.75);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(240, 240, 255, 0.08);
+  }
+  .glass-panel-primary {
+    background: rgba(123, 47, 255, 0.10);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(123, 47, 255, 0.25);
+  }
+  .glass-panel-cta {
+    background: rgba(255, 45, 120, 0.10);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 45, 120, 0.25);
+  }
+
+  /* ── Glows ── */
+  .glow-primary {
+    box-shadow: 0 0 40px rgba(123, 47, 255, 0.25), 0 0 80px rgba(123, 47, 255, 0.10);
+  }
+  .glow-primary-sm {
+    box-shadow: 0 0 20px rgba(123, 47, 255, 0.35);
+  }
+  .glow-cta {
+    box-shadow: 0 0 40px rgba(255, 45, 120, 0.25), 0 0 80px rgba(255, 45, 120, 0.10);
+  }
+  .glow-cta-sm {
+    box-shadow: 0 0 20px rgba(255, 45, 120, 0.35);
+  }
+
+  /* ── Divider ── */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(123, 47, 255, 0.25), transparent);
+  }
+}
+
+/* ════════════════════════════════════
+   Scroll-triggered animation utilities
+   ════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+/* Stagger delays */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+.delay-600 { transition-delay: 600ms; }
+
+/* ════════════════════════════════════
+   Keyframe Animations
+   ════════════════════════════════════ */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes shimmer-purple {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.animate-float        { animation: float 4s ease-in-out infinite; }
+.animate-fade-up      { animation: fade-up 0.7s ease forwards; }
+.animate-scale-in     { animation: scale-in 0.5s ease forwards; }
+.animate-spin-slow    { animation: spin-slow 20s linear infinite; }
+.animate-pulse-ring   { animation: pulse-ring 1.5s ease-out infinite; }
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #A78BFA 0%, #FF2D78 30%, #FFFFFF 50%, #FF2D78 70%, #A78BFA 100%);
+  background-size: 200% auto;
+  animation: shimmer-purple 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ════════════════════════════════════
+   Scrollbar
+   ════════════════════════════════════ */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #07070F; }
+::-webkit-scrollbar-thumb { background: rgba(123,47,255,0.4); border-radius: 2px; }
