@@ -12,42 +12,43 @@ import WaitlistForm from '@/components/features/WaitlistForm'
 import CTASection from '@/components/features/CTASection'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 
-// Page transition fade-in on load
 function PageTransition({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     document.body.style.opacity = '0'
-    document.body.style.transition = 'opacity 0.5s ease'
+    document.body.style.transition = 'opacity 0.4s ease'
     const t = setTimeout(() => {
       document.body.style.opacity = '1'
-    }, 50)
+    }, 30)
     return () => clearTimeout(t)
   }, [])
   return <>{children}</>
 }
 
 export default function App() {
-  // Initialize scroll reveal after mount
   useScrollReveal()
 
   return (
     <PageTransition>
-      <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: '#07070F', color: '#F0F0FF' }}>
+      <div
+        className="min-h-screen overflow-x-hidden"
+        style={{ backgroundColor: '#050506', color: '#EDEDEF' }}
+      >
         <Navbar />
         <main>
           <Hero />
-          <div className="section-divider mx-auto max-w-5xl" />
+          <div className="section-sep mx-auto max-w-5xl" />
           <BrandLogos />
-          <div className="section-divider mx-auto max-w-5xl" />
+          <div className="section-sep mx-auto max-w-5xl" />
           <Features />
-          <div className="section-divider mx-auto max-w-5xl" />
+          <div className="section-sep mx-auto max-w-5xl" />
           <VideoDemo />
-          <div className="section-divider mx-auto max-w-5xl" />
+          <div className="section-sep mx-auto max-w-5xl" />
           <HowItWorks />
-          <div className="section-divider mx-auto max-w-5xl" />
+          <div className="section-sep mx-auto max-w-5xl" />
           <Testimonials />
-          <div className="section-divider mx-auto max-w-5xl" />
+          <div className="section-sep mx-auto max-w-5xl" />
           <Pricing />
-          <div className="section-divider mx-auto max-w-5xl" />
+          <div className="section-sep mx-auto max-w-5xl" />
           <WaitlistForm />
           <CTASection />
         </main>

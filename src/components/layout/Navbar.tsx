@@ -8,9 +8,7 @@ const navLinks = [
   { label: 'Waitlist', href: '#waitlist' },
 ]
 
-// Deep links — update with real store URLs when published
 const APP_STORE_URL = 'https://apps.apple.com/app/id000000000'
-const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.drape.app'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -18,101 +16,116 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll)
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'glass-panel border-b border-[rgba(240,240,255,0.05)] py-3'
+          ? 'bg-[#050506]/90 backdrop-blur-xl border-b border-white/[0.06] py-3'
           : 'bg-transparent py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-full gradient-primary flex items-center justify-center glow-primary-sm">
-            <span className="text-white font-bold text-sm font-display">D</span>
+        <a href="#" className="flex items-center gap-2.5 group">
+          <div
+            className="w-7 h-7 rounded-lg flex items-center justify-center text-white font-semibold text-sm"
+            style={{
+              background: 'linear-gradient(135deg, #5E6AD2, #818cf8)',
+              boxShadow: '0 0 14px rgba(94,106,210,0.45)',
+            }}
+          >
+            D
           </div>
-          <span className="text-[#F0F0FF] font-display font-bold text-xl tracking-wide">
-            Drape
-          </span>
+          <span className="text-[#EDEDEF] font-semibold text-lg tracking-tight">Drape</span>
         </a>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-sm text-[rgba(240,240,255,0.55)] hover:text-[#7B2FFF] transition-colors duration-200 tracking-wide"
+              className="text-sm text-[#8A8F98] hover:text-[#EDEDEF] transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-white/[0.05]"
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
+        {/* Desktop CTAs */}
+        <div className="hidden md:flex items-center gap-2">
           <a
             href={APP_STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-[rgba(240,240,255,0.55)] hover:text-[#F0F0FF] transition-colors px-4 py-2"
+            className="text-sm text-[#8A8F98] hover:text-[#EDEDEF] transition-colors px-4 py-2 rounded-lg hover:bg-white/[0.05]"
           >
-            Download App
+            Download
           </a>
           <a
             href="#waitlist"
-            className="gradient-cta text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:opacity-90 transition-all duration-200 glow-cta-sm"
+            className="text-sm font-semibold text-white px-4 py-2 rounded-lg transition-all duration-200 active:scale-[0.98]"
+            style={{
+              background: '#5E6AD2',
+              boxShadow: '0 0 0 1px rgba(94,106,210,0.5), 0 4px 12px rgba(94,106,210,0.3), inset 0 1px 0 0 rgba(255,255,255,0.15)',
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.background = '#6872D9'
+              ;(e.currentTarget as HTMLElement).style.boxShadow = '0 0 0 1px rgba(94,106,210,0.6), 0 6px 20px rgba(94,106,210,0.4), inset 0 1px 0 0 rgba(255,255,255,0.2)'
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.background = '#5E6AD2'
+              ;(e.currentTarget as HTMLElement).style.boxShadow = '0 0 0 1px rgba(94,106,210,0.5), 0 4px 12px rgba(94,106,210,0.3), inset 0 1px 0 0 rgba(255,255,255,0.15)'
+            }}
           >
             Join Waitlist
           </a>
         </div>
 
-        {/* Mobile menu button */}
+        {/* Mobile burger */}
         <button
-          className="md:hidden text-[rgba(240,240,255,0.7)] hover:text-[#F0F0FF] p-2"
+          className="md:hidden text-[#8A8F98] hover:text-[#EDEDEF] p-2 rounded-lg hover:bg-white/[0.05] transition-all"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          {menuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile dropdown */}
       {menuOpen && (
-        <div className="md:hidden glass-panel border-t border-[rgba(240,240,255,0.05)] mt-2 px-6 py-4 flex flex-col gap-4">
+        <div
+          className="md:hidden mx-4 mt-2 rounded-xl border border-white/[0.06] px-4 py-4 flex flex-col gap-1"
+          style={{
+            background: '#0a0a0c',
+            backdropFilter: 'blur(24px)',
+          }}
+        >
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-[rgba(240,240,255,0.6)] hover:text-[#7B2FFF] transition-colors py-1"
+              className="text-[#8A8F98] hover:text-[#EDEDEF] hover:bg-white/[0.05] px-3 py-2.5 rounded-lg text-sm transition-all"
             >
               {link.label}
             </a>
           ))}
-          <div className="flex gap-3 mt-2">
+          <div className="mt-3 pt-3 border-t border-white/[0.06]">
             <a
-              href={APP_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#waitlist"
               onClick={() => setMenuOpen(false)}
-              className="flex-1 glass-panel text-[rgba(240,240,255,0.7)] text-sm font-medium px-4 py-2.5 rounded-full text-center border border-[rgba(240,240,255,0.08)] hover:border-[rgba(123,47,255,0.3)]"
+              className="w-full text-center block text-sm font-semibold text-white py-2.5 rounded-lg"
+              style={{
+                background: '#5E6AD2',
+                boxShadow: '0 0 0 1px rgba(94,106,210,0.5), 0 4px 12px rgba(94,106,210,0.3)',
+              }}
             >
-              App Store
-            </a>
-            <a
-              href={PLAY_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMenuOpen(false)}
-              className="flex-1 gradient-cta text-white font-semibold px-4 py-2.5 rounded-full text-center text-sm"
-            >
-              Google Play
+              Join Waitlist — Free
             </a>
           </div>
         </div>

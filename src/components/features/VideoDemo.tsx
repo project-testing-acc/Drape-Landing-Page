@@ -4,61 +4,88 @@ export default function VideoDemo() {
   const [playing, setPlaying] = useState(false)
 
   return (
-    <section className="py-20 px-6 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(123,47,255,0.03)] to-transparent pointer-events-none" />
+    <section className="py-24 px-6 relative overflow-hidden">
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full pointer-events-none"
+        style={{ background: 'rgba(94,106,210,0.05)', filter: 'blur(100px)' }}
+      />
 
-      <div className="max-w-5xl mx-auto reveal">
+      <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 reveal">
-          <p className="text-[#7B2FFF] text-xs tracking-[0.25em] uppercase mb-4">See It Live</p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-[#F0F0FF] leading-tight">
-            Watch Drape in{' '}
-            <span className="gradient-text-hero">30 seconds.</span>
+          <p className="label-tag mb-4">See It Live</p>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tighter">
+            <span className="gradient-text-white">Watch Drape in </span>
+            <span className="gradient-text-accent">30 seconds.</span>
           </h2>
         </div>
 
         {/* Video frame */}
-        <div className="relative rounded-2xl overflow-hidden glass-panel border border-[rgba(240,240,255,0.08)] glow-primary reveal-scale">
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7B2FFF]/50 to-transparent" />
-          
+        <div
+          className="relative rounded-2xl overflow-hidden reveal-scale border border-white/[0.06]"
+          style={{ boxShadow: '0 0 0 1px rgba(255,255,255,0.06), 0 8px 60px rgba(0,0,0,0.6), 0 0 100px rgba(94,106,210,0.08)' }}
+        >
+          {/* Top accent line */}
+          <div
+            className="absolute top-0 left-0 right-0 h-px"
+            style={{ background: 'linear-gradient(90deg, transparent, rgba(94,106,210,0.5), transparent)' }}
+          />
+
           {!playing ? (
-            <div className="relative aspect-video bg-[#10101C] cursor-pointer group" onClick={() => setPlaying(true)}>
-              {/* Thumbnail */}
+            <div
+              className="relative aspect-video bg-[#0a0a0c] cursor-pointer group"
+              onClick={() => setPlaying(true)}
+            >
               <img
                 src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=675&fit=crop&q=80"
-                alt="Drape app demo preview"
-                className="w-full h-full object-cover opacity-50 group-hover:opacity-60 transition-opacity duration-300"
+                alt="Drape demo preview"
+                className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-300"
               />
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#07070F]/80 via-transparent to-transparent" />
-              <div className="absolute inset-0 bg-[rgba(123,47,255,0.15)]" />
+              <div
+                className="absolute inset-0"
+                style={{ background: 'linear-gradient(to top, rgba(5,5,6,0.9), rgba(5,5,6,0.3))' }}
+              />
+              {/* Grid overlay on video */}
+              <div className="absolute inset-0 bg-grid" />
 
               {/* Play button */}
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-5">
-                <div className="relative">
-                  <div className="absolute inset-0 rounded-full bg-[#7B2FFF]/30 animate-ping scale-150" />
-                  <div className="relative w-20 h-20 rounded-full bg-[#7B2FFF] flex items-center justify-center glow-primary group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <div className="relative group-hover:-translate-y-1 transition-transform duration-300">
+                  <div
+                    className="absolute inset-0 rounded-full animate-pulse-ring"
+                    style={{ background: 'rgba(94,106,210,0.2)', transform: 'scale(1.4)' }}
+                  />
+                  <div
+                    className="relative w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
+                    style={{
+                      background: '#5E6AD2',
+                      boxShadow: '0 0 0 1px rgba(94,106,210,0.6), 0 4px 24px rgba(94,106,210,0.5), inset 0 1px 0 0 rgba(255,255,255,0.2)',
+                    }}
+                  >
+                    <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </div>
                 </div>
                 <div className="text-center">
-                  <p className="text-[#F0F0FF] font-semibold text-base">Watch the demo</p>
-                  <p className="text-[rgba(240,240,255,0.4)] text-sm">30 seconds · No sound required</p>
+                  <p className="text-[#EDEDEF] font-semibold text-sm">Watch the demo</p>
+                  <p className="text-[#8A8F98] text-xs mt-0.5">30 seconds · No sound required</p>
                 </div>
               </div>
 
-              {/* Corner tags */}
+              {/* Live badge */}
               <div className="absolute top-4 left-4">
-                <span className="glass-panel-primary rounded-full px-3 py-1 text-xs text-[#A78BFA] font-medium border border-[rgba(123,47,255,0.3)]">
-                  ● LIVE DEMO
+                <span
+                  className="flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-semibold text-[#5E6AD2] tracking-widest uppercase"
+                  style={{ background: 'rgba(94,106,210,0.12)', border: '1px solid rgba(94,106,210,0.3)' }}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#5E6AD2] animate-pulse" />
+                  LIVE DEMO
                 </span>
               </div>
             </div>
           ) : (
-            <div className="aspect-video bg-black flex items-center justify-center">
-              {/* Embed a real YouTube/Vimeo video here. Using placeholder for demo. */}
+            <div className="aspect-video bg-[#020203]">
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1"
@@ -70,21 +97,31 @@ export default function VideoDemo() {
           )}
 
           {/* Bottom bar */}
-          <div className="flex items-center justify-between px-6 py-4 bg-[#10101C]/80 border-t border-[rgba(240,240,255,0.06)]">
+          <div
+            className="flex items-center justify-between px-6 py-4 border-t border-white/[0.06]"
+            style={{ background: 'rgba(10,10,12,0.9)' }}
+          >
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-[rgba(123,47,255,0.2)] flex items-center justify-center">
-                <span className="text-[#7B2FFF] font-bold text-xs font-display">D</span>
+              <div
+                className="w-7 h-7 rounded-lg flex items-center justify-center text-white font-semibold text-xs"
+                style={{ background: 'linear-gradient(135deg, #5E6AD2, #818cf8)' }}
+              >
+                D
               </div>
               <div>
-                <p className="text-[#F0F0FF] text-sm font-semibold">Drape — Virtual Try-On</p>
-                <p className="text-[rgba(240,240,255,0.35)] text-xs">Official product demo · 2026</p>
+                <p className="text-[#EDEDEF] text-sm font-semibold">Drape — Virtual Try-On</p>
+                <p className="text-[#8A8F98] text-xs">Official product demo · 2026</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[rgba(240,240,255,0.3)] text-xs">Share</span>
+              <span className="text-[#8A8F98] text-xs hidden sm:block">Share</span>
               <div className="flex gap-1.5">
-                {['T','I','L'].map((s) => (
-                  <button key={s} className="w-7 h-7 glass-panel rounded-full text-[rgba(240,240,255,0.4)] hover:text-[#7B2FFF] text-[10px] font-bold transition-colors">
+                {['T', 'I', 'L'].map((s) => (
+                  <button
+                    key={s}
+                    className="w-7 h-7 rounded-lg text-[#8A8F98] hover:text-[#5E6AD2] text-xs font-semibold transition-colors"
+                    style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}
+                  >
                     {s}
                   </button>
                 ))}
@@ -93,16 +130,20 @@ export default function VideoDemo() {
           </div>
         </div>
 
-        {/* Stats below video */}
-        <div className="mt-8 grid grid-cols-3 gap-4 reveal delay-200">
+        {/* Stats below */}
+        <div className="mt-6 grid grid-cols-3 gap-4 reveal delay-200">
           {[
             { value: '< 2s', label: 'Generation time' },
             { value: '98.4%', label: 'Accuracy rate' },
             { value: '40M+', label: 'Training images' },
-          ].map((s) => (
-            <div key={s.label} className="glass-panel rounded-2xl p-5 text-center border border-[rgba(240,240,255,0.06)] hover:border-[rgba(123,47,255,0.2)] transition-all">
-              <p className="font-display text-2xl font-bold gradient-text-primary">{s.value}</p>
-              <p className="text-[rgba(240,240,255,0.4)] text-xs mt-1">{s.label}</p>
+          ].map((s, i) => (
+            <div
+              key={i}
+              className="rounded-xl p-5 text-center border border-white/[0.06] hover:border-white/[0.12] transition-all duration-200"
+              style={{ background: 'rgba(255,255,255,0.04)' }}
+            >
+              <p className="text-xl font-semibold text-[#EDEDEF] tracking-tight">{s.value}</p>
+              <p className="text-[#8A8F98] text-xs mt-1">{s.label}</p>
             </div>
           ))}
         </div>

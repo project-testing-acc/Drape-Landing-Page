@@ -15,9 +15,6 @@ const plans = [
     ],
     cta: 'Get Started Free',
     highlight: false,
-    accentColor: 'text-[rgba(240,240,255,0.5)]',
-    checkBg: 'bg-[rgba(240,240,255,0.06)]',
-    checkColor: 'text-[rgba(240,240,255,0.4)]',
   },
   {
     name: 'Style',
@@ -34,9 +31,6 @@ const plans = [
     ],
     cta: 'Start Free Trial',
     highlight: true,
-    accentColor: 'text-[#A78BFA]',
-    checkBg: 'bg-[rgba(123,47,255,0.15)]',
-    checkColor: 'text-[#A78BFA]',
   },
   {
     name: 'Pro',
@@ -53,9 +47,6 @@ const plans = [
     ],
     cta: 'Contact Sales',
     highlight: false,
-    accentColor: 'text-[rgba(240,240,255,0.5)]',
-    checkBg: 'bg-[rgba(240,240,255,0.06)]',
-    checkColor: 'text-[rgba(240,240,255,0.4)]',
   },
 ]
 
@@ -63,39 +54,60 @@ export default function Pricing() {
   const [yearly, setYearly] = useState(false)
 
   return (
-    <section id="pricing" className="py-28 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[rgba(255,45,120,0.04)] rounded-full blur-3xl pointer-events-none" />
+    <section id="pricing" className="py-32 relative overflow-hidden">
+      <div
+        className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full pointer-events-none"
+        style={{ background: 'rgba(94,106,210,0.05)', filter: 'blur(100px)' }}
+      />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16 max-w-2xl mx-auto reveal">
-          <p className="text-[#7B2FFF] text-xs tracking-[0.25em] uppercase mb-4">Pricing</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-[#F0F0FF] leading-tight mb-5">
-            Simple plans,{' '}
+        <div className="text-center mb-16 max-w-xl mx-auto reveal">
+          <p className="label-tag mb-4">Pricing</p>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tighter">
+            <span className="gradient-text-white">Simple plans, </span>
             <span className="gradient-text-hero">real value.</span>
           </h2>
-          <p className="text-[rgba(240,240,255,0.45)] text-lg mb-8">
+          <p className="text-[#8A8F98] text-lg mt-4 mb-8">
             Start free. Upgrade when you love it. Cancel anytime.
           </p>
 
           {/* Toggle */}
-          <div className="inline-flex items-center glass-panel rounded-full p-1 gap-1">
+          <div
+            className="inline-flex items-center p-1 rounded-lg border border-white/[0.08]"
+            style={{ background: 'rgba(255,255,255,0.04)' }}
+          >
             <button
               onClick={() => setYearly(false)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                !yearly ? 'gradient-primary text-white' : 'text-[rgba(240,240,255,0.45)] hover:text-[#F0F0FF]'
+              className={`px-5 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                !yearly
+                  ? 'text-white'
+                  : 'text-[#8A8F98] hover:text-[#EDEDEF]'
               }`}
+              style={!yearly ? {
+                background: '#5E6AD2',
+                boxShadow: '0 0 0 1px rgba(94,106,210,0.4), 0 2px 8px rgba(94,106,210,0.3)',
+              } : {}}
             >
               Monthly
             </button>
             <button
               onClick={() => setYearly(true)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
-                yearly ? 'gradient-primary text-white' : 'text-[rgba(240,240,255,0.45)] hover:text-[#F0F0FF]'
+              className={`px-5 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
+                yearly
+                  ? 'text-white'
+                  : 'text-[#8A8F98] hover:text-[#EDEDEF]'
               }`}
+              style={yearly ? {
+                background: '#5E6AD2',
+                boxShadow: '0 0 0 1px rgba(94,106,210,0.4), 0 2px 8px rgba(94,106,210,0.3)',
+              } : {}}
             >
               Yearly
-              <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${yearly ? 'bg-white/20 text-white' : 'bg-green-500/20 text-green-400'}`}>
+              <span
+                className="text-[9px] font-bold px-1.5 py-0.5 rounded-full"
+                style={{ background: 'rgba(94,106,210,0.2)', color: '#818cf8' }}
+              >
                 -20%
               </span>
             </button>
@@ -103,47 +115,61 @@ export default function Pricing() {
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-6 items-start">
+        <div className="grid md:grid-cols-3 gap-4 items-start">
           {plans.map((plan, i) => (
             <div
               key={i}
-              className={`reveal delay-${i * 150} rounded-3xl p-8 flex flex-col relative overflow-hidden transition-all duration-300 ${
-                plan.highlight
-                  ? 'glass-panel-primary border border-[rgba(123,47,255,0.3)] glow-primary md:-mt-4 md:-mb-4'
-                  : 'glass-panel border border-[rgba(240,240,255,0.06)] hover:border-[rgba(123,47,255,0.15)]'
+              className={`reveal delay-${i * 150} rounded-2xl p-7 flex flex-col relative overflow-hidden border transition-all duration-300 ${
+                plan.highlight ? 'md:-mt-3 md:-mb-3' : ''
               }`}
+              style={{
+                background: plan.highlight ? 'rgba(94,106,210,0.08)' : 'rgba(255,255,255,0.04)',
+                border: `1px solid ${plan.highlight ? 'rgba(94,106,210,0.3)' : 'rgba(255,255,255,0.06)'}`,
+                boxShadow: plan.highlight
+                  ? '0 0 0 1px rgba(94,106,210,0.3), 0 8px 40px rgba(0,0,0,0.5), 0 0 80px rgba(94,106,210,0.10)'
+                  : '0 0 0 1px rgba(255,255,255,0.06), 0 2px 20px rgba(0,0,0,0.3)',
+              }}
             >
+              {/* Top accent line for highlighted */}
               {plan.highlight && (
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7B2FFF]/70 to-transparent" />
+                <div
+                  className="absolute top-0 left-0 right-0 h-px"
+                  style={{ background: 'linear-gradient(90deg, transparent, rgba(94,106,210,0.6), transparent)' }}
+                />
               )}
+
               {plan.highlight && (
-                <div className="absolute top-4 right-6">
-                  <span className="gradient-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-                    Most Popular
+                <div className="absolute top-4 right-5">
+                  <span
+                    className="text-[10px] font-semibold text-[#5E6AD2] px-2.5 py-1 rounded-full tracking-widest uppercase"
+                    style={{ background: 'rgba(94,106,210,0.15)', border: '1px solid rgba(94,106,210,0.3)' }}
+                  >
+                    Popular
                   </span>
                 </div>
               )}
 
-              <div className="mb-6">
-                <p className={`text-xs tracking-widest uppercase mb-1 ${plan.highlight ? 'text-[#A78BFA]' : 'text-[rgba(240,240,255,0.4)]'}`}>{plan.name}</p>
-                <p className="text-[rgba(240,240,255,0.35)] text-sm">{plan.tagline}</p>
+              {/* Plan info */}
+              <div className="mb-5">
+                <p className="text-[#EDEDEF] font-semibold text-sm">{plan.name}</p>
+                <p className="text-[#8A8F98] text-xs mt-0.5">{plan.tagline}</p>
               </div>
 
               {/* Price */}
-              <div className="mb-8">
+              <div className="mb-7">
                 <div className="flex items-end gap-1">
-                  <span className="font-display text-5xl font-bold text-[#F0F0FF]">
+                  <span className="text-4xl font-semibold text-[#EDEDEF] tracking-tight">
                     ${yearly ? plan.price.yearly : plan.price.monthly}
                   </span>
                   {plan.price.monthly > 0 && (
-                    <span className="text-[rgba(240,240,255,0.35)] text-sm mb-2">/month</span>
+                    <span className="text-[#8A8F98] text-sm mb-1">/mo</span>
                   )}
                 </div>
                 {plan.price.monthly === 0 && (
-                  <span className="text-[rgba(240,240,255,0.3)] text-sm">Forever free</span>
+                  <span className="text-[#8A8F98] text-xs">Forever free</span>
                 )}
                 {yearly && plan.price.monthly > 0 && (
-                  <p className="text-green-400 text-xs mt-1">
+                  <p className="text-[#5E6AD2] text-xs mt-1">
                     Save ${((plan.price.monthly - plan.price.yearly) * 12).toFixed(0)}/year
                   </p>
                 )}
@@ -152,22 +178,48 @@ export default function Pricing() {
               {/* Features */}
               <ul className="flex flex-col gap-3 mb-8 flex-1">
                 {plan.features.map((f, j) => (
-                  <li key={j} className="flex items-start gap-3">
-                    <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${plan.checkBg}`}>
-                      <Check className={`w-3 h-3 ${plan.checkColor}`} />
+                  <li key={j} className="flex items-start gap-2.5">
+                    <div
+                      className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                      style={{ background: plan.highlight ? 'rgba(94,106,210,0.15)' : 'rgba(255,255,255,0.06)' }}
+                    >
+                      <Check className="w-2.5 h-2.5 text-[#5E6AD2]" />
                     </div>
-                    <span className="text-[rgba(240,240,255,0.6)] text-sm leading-relaxed">{f}</span>
+                    <span className="text-[#8A8F98] text-sm leading-relaxed">{f}</span>
                   </li>
                 ))}
               </ul>
 
               {/* CTA */}
               <button
-                className={`w-full py-3.5 rounded-full font-semibold text-sm transition-all duration-200 active:scale-95 ${
-                  plan.highlight
-                    ? 'gradient-cta text-white glow-cta-sm hover:opacity-90'
-                    : 'glass-panel border border-[rgba(240,240,255,0.08)] text-[rgba(240,240,255,0.7)] hover:border-[rgba(123,47,255,0.3)] hover:text-[#A78BFA]'
+                className={`w-full py-3 rounded-lg font-semibold text-sm transition-all duration-200 active:scale-[0.98] ${
+                  plan.highlight ? 'text-white' : 'text-[#8A8F98] hover:text-[#EDEDEF]'
                 }`}
+                style={plan.highlight ? {
+                  background: '#5E6AD2',
+                  boxShadow: '0 0 0 1px rgba(94,106,210,0.5), 0 4px 12px rgba(94,106,210,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)',
+                } : {
+                  background: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                }}
+                onMouseEnter={(e) => {
+                  if (plan.highlight) {
+                    const el = e.currentTarget as HTMLElement
+                    el.style.background = '#6872D9'
+                    el.style.boxShadow = '0 0 0 1px rgba(94,106,210,0.6), 0 6px 20px rgba(94,106,210,0.45), inset 0 1px 0 0 rgba(255,255,255,0.2)'
+                  } else {
+                    (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.08)'
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (plan.highlight) {
+                    const el = e.currentTarget as HTMLElement
+                    el.style.background = '#5E6AD2'
+                    el.style.boxShadow = '0 0 0 1px rgba(94,106,210,0.5), 0 4px 12px rgba(94,106,210,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)'
+                  } else {
+                    (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.05)'
+                  }
+                }}
               >
                 {plan.cta}
               </button>
@@ -175,7 +227,7 @@ export default function Pricing() {
           ))}
         </div>
 
-        <p className="text-center text-[rgba(240,240,255,0.25)] text-sm mt-10 reveal">
+        <p className="text-center text-[#8A8F98]/50 text-sm mt-8 reveal">
           All plans include a 14-day free trial · No credit card required
         </p>
       </div>
