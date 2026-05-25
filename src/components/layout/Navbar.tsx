@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import logo from '../../assets/logo.png'
 
 const navLinks = [
   { label: 'Features', href: '#features' },
@@ -33,16 +32,13 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
           <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden bg-[#14141F]"
+            className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-lg"
             style={{
-              boxShadow: '0 0 18px rgba(123,47,255,0.18)',
+              background: 'linear-gradient(135deg, #5E6AD2, #818cf8)',
+              boxShadow: '0 0 18px rgba(94,106,210,0.35)',
             }}
           >
-            <img
-              src={logo}
-              alt="Drape Logo"
-              className="w-full h-full object-contain p-1"
-            />
+            D
           </div>
           <span className="text-xl font-bold text-[#EDEDEF] tracking-tight">Drape</span>
         </a>
