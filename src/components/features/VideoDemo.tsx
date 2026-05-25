@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import drapeVideo from '@/assets/drape.mp4'
 
 export default function VideoDemo() {
   const [playing, setPlaying] = useState(false)
@@ -86,48 +87,15 @@ export default function VideoDemo() {
             </div>
           ) : (
             <div className="aspect-video bg-[#020203]">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1"
-                title="Drape App Demo"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+              <video
+                className="w-full h-full object-cover"
+                src={drapeVideo}
+                autoPlay
+                loop
+                playsInline
               />
             </div>
           )}
-
-          {/* Bottom bar */}
-          <div
-            className="flex items-center justify-between px-6 py-4 border-t border-white/[0.06]"
-            style={{ background: 'rgba(10,10,12,0.9)' }}
-          >
-            <div className="flex items-center gap-3">
-              <div
-                className="w-7 h-7 rounded-lg flex items-center justify-center text-white font-semibold text-xs"
-                style={{ background: 'linear-gradient(135deg, #5E6AD2, #818cf8)' }}
-              >
-                D
-              </div>
-              <div>
-                <p className="text-[#EDEDEF] text-sm font-semibold">Drape — Virtual Try-On</p>
-                <p className="text-[#8A8F98] text-xs">Official product demo · 2026</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[#8A8F98] text-xs hidden sm:block">Share</span>
-              <div className="flex gap-1.5">
-                {['T', 'I', 'L'].map((s) => (
-                  <button
-                    key={s}
-                    className="w-7 h-7 rounded-lg text-[#8A8F98] hover:text-[#5E6AD2] text-xs font-semibold transition-colors"
-                    style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}
-                  >
-                    {s}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Stats below */}

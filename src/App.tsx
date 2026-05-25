@@ -6,6 +6,7 @@ import BrandLogos from '@/components/features/BrandLogos'
 import Features from '@/components/features/Features'
 import VideoDemo from '@/components/features/VideoDemo'
 import HowItWorks from '@/components/features/HowItWorks'
+import AppShowcase from '@/components/features/AppShowcase'
 import Testimonials from '@/components/features/Testimonials'
 import Pricing from '@/components/features/Pricing'
 import WaitlistForm from '@/components/features/WaitlistForm'
@@ -30,7 +31,7 @@ export default function App() {
   return (
     <PageTransition>
       <div
-        className="min-h-screen overflow-x-hidden"
+        className="min-h-screen"
         style={{ backgroundColor: '#050506', color: '#EDEDEF' }}
       >
         <Navbar />
@@ -45,6 +46,8 @@ export default function App() {
           <div className="section-sep mx-auto max-w-5xl" />
           <HowItWorks />
           <div className="section-sep mx-auto max-w-5xl" />
+          <AppShowcase />
+          <div className="section-sep mx-auto max-w-5xl" />
           <Testimonials />
           <div className="section-sep mx-auto max-w-5xl" />
           <Pricing />
@@ -57,3 +60,4 @@ export default function App() {
     </PageTransition>
   )
 }
+

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import logo from '../../assets/logo.png'
 
 const navLinks = [
   { label: 'Features', href: '#features' },
@@ -32,15 +33,18 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
           <div
-            className="w-7 h-7 rounded-lg flex items-center justify-center text-white font-semibold text-sm"
+            className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden bg-[#14141F]"
             style={{
-              background: 'linear-gradient(135deg, #5E6AD2, #818cf8)',
-              boxShadow: '0 0 14px rgba(94,106,210,0.45)',
+              boxShadow: '0 0 18px rgba(123,47,255,0.18)',
             }}
           >
-            D
+            <img
+              src={logo}
+              alt="Drape Logo"
+              className="w-full h-full object-contain p-1"
+            />
           </div>
-          <span className="text-[#EDEDEF] font-semibold text-lg tracking-tight">Drape</span>
+          <span className="text-xl font-bold text-[#EDEDEF] tracking-tight">Drape</span>
         </a>
 
         {/* Desktop nav */}
@@ -70,11 +74,11 @@ export default function Navbar() {
             href="#waitlist"
             className="text-sm font-semibold text-white px-4 py-2 rounded-lg transition-all duration-200 active:scale-[0.98]"
             style={{
-              background: '#5E6AD2',
-              boxShadow: '0 0 0 1px rgba(94,106,210,0.5), 0 4px 12px rgba(94,106,210,0.3), inset 0 1px 0 0 rgba(255,255,255,0.15)',
+              background: '#7B2FFF',
+              boxShadow: '0 0 0 1px rgba(144, 94, 210, 0.5), 0 4px 12px rgba(94,106,210,0.3), inset 0 1px 0 0 rgba(255,255,255,0.15)',
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = '#6872D9'
+              (e.currentTarget as HTMLElement).style.background = '#7B2FFF'
               ;(e.currentTarget as HTMLElement).style.boxShadow = '0 0 0 1px rgba(94,106,210,0.6), 0 6px 20px rgba(94,106,210,0.4), inset 0 1px 0 0 rgba(255,255,255,0.2)'
             }}
             onMouseLeave={(e) => {

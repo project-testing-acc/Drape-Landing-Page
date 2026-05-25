@@ -14,7 +14,7 @@ const features = [
   },
   {
     title: 'AI Draping Engine',
-    desc: 'Photorealistic fabric simulation captures drape, wrinkle, fit — and renders it on your body in under 2 seconds. No digital mannequin stiffness.',
+    desc: 'Photorealistic fabric simulation captures drape, wrinkle, fit and renders it on your body in under 2 seconds. No digital mannequin stiffness.',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
@@ -98,10 +98,6 @@ function SpotlightCard({
         const el = e.currentTarget as HTMLElement
         el.style.boxShadow = '0 0 0 1px rgba(255,255,255,0.10), 0 8px 40px rgba(0,0,0,0.45), 0 0 60px rgba(94,106,210,0.08)'
       }}
-      onMouseLeave={(e) => {
-        const el = e.currentTarget as HTMLElement
-        el.style.boxShadow = '0 0 0 1px rgba(255,255,255,0.06), 0 2px 20px rgba(0,0,0,0.35)'
-      }}
     >
       {/* Mouse spotlight */}
       <div
@@ -139,7 +135,7 @@ export default function Features() {
         </div>
 
         {/* Asymmetric bento grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[200px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-auto md:auto-rows-[200px]">
           {/* Card 1 — normal */}
           <SpotlightCard className="reveal delay-100 p-7 flex flex-col justify-between">
             <div

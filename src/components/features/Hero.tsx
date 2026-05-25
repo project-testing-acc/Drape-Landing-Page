@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import heroBg from '@/assets/hero-bg.jpg'
-import phoneMockup from '@/assets/phone-mockup.png'
+import phoneMockup from '@/assets/drape.png'
+import Phone3D from './Phone3D'
 
 const APP_STORE_URL = 'https://apps.apple.com/app/id000000000'
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.drape.app'
@@ -60,13 +61,6 @@ export default function Hero() {
           {/* Left copy */}
           <div className="flex flex-col gap-7 animate-fade-up">
             {/* Label badge */}
-            <div
-              className="inline-flex items-center gap-2 w-fit px-3 py-1.5 rounded-full border border-[rgba(94,106,210,0.3)] text-[#5E6AD2]"
-              style={{ background: 'rgba(94,106,210,0.08)' }}
-            >
-              <div className="w-1.5 h-1.5 rounded-full bg-[#5E6AD2] animate-pulse" />
-              <span className="label-tag">AI-Powered Virtual Try-On</span>
-            </div>
 
             {/* Headline */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-none tracking-tighter text-[#EDEDEF]">
@@ -135,7 +129,7 @@ export default function Hero() {
             </div>
 
             {/* Store badges */}
-            <div className="flex items-center gap-3 flex-wrap">
+            {/* <div className="flex items-center gap-3 flex-wrap">
               {[
                 {
                   href: APP_STORE_URL,
@@ -173,7 +167,7 @@ export default function Hero() {
                   </div>
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Right — phone mockup */}
@@ -184,16 +178,14 @@ export default function Hero() {
               style={{ background: 'rgba(94,106,210,0.15)', filter: 'blur(80px)' }}
             />
 
-            <div className="relative animate-float z-10">
-              <img
-                src={phoneMockup}
-                alt="Drape app interface"
-                className="w-60 md:w-72 lg:w-80 drop-shadow-2xl"
-              />
+            <div className="relative z-10 w-60 md:w-72 lg:w-80 h-[500px] md:h-[600px] lg:h-[600px] mx-auto">
+              <div className="absolute inset-[-80px]">
+                <Phone3D imageSrc={phoneMockup} />
+              </div>
 
               {/* Floating card — top left */}
               <div
-                className="absolute -left-10 top-16 rounded-2xl px-4 py-3 flex items-center gap-3 border border-[rgba(94,106,210,0.25)]"
+                className="absolute -left-10 rounded-2xl px-4 py-3 flex items-center gap-3 border border-[rgba(94,106,210,0.25)]"
                 style={{
                   background: 'rgba(94,106,210,0.10)',
                   backdropFilter: 'blur(20px)',
@@ -216,7 +208,7 @@ export default function Hero() {
 
               {/* Floating card — bottom right */}
               <div
-                className="absolute -right-8 bottom-24 rounded-2xl px-4 py-3 border border-white/[0.08]"
+                className="absolute -right-8 bottom-0 rounded-2xl px-4 py-3 border border-white/[0.08]"
                 style={{
                   background: 'rgba(255,255,255,0.04)',
                   backdropFilter: 'blur(20px)',

@@ -106,7 +106,7 @@ export default function Pricing() {
               Yearly
               <span
                 className="text-[9px] font-bold px-1.5 py-0.5 rounded-full"
-                style={{ background: 'rgba(94,106,210,0.2)', color: '#818cf8' }}
+                style={{ background: 'rgba(94,106,210,0.2)', color: yearly ? '#ffffffff' : '#818cf8' }}
               >
                 -20%
               </span>
