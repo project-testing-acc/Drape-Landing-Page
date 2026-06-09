@@ -1,6 +1,6 @@
 import { useState } from 'react'
-// No local video asset — use a hosted URL or upload drape.mp4 to src/assets to enable playback
-import drapeVideo from '@/assets/drape.mp4'
+// Set this to a hosted video URL or upload drape.mp4 to src/assets to enable playback
+const drapeVideo: string | null = null
 
 
 export default function VideoDemo() {
