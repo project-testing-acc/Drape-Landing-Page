@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import heroBg from '@/assets/hero-bg.jpg'
-import phoneMockup from '@/assets/phone-mockup.png'
+import phoneMockup from '@/assets/drape.png'
 import Phone3D from './Phone3D'
 
 const APP_STORE_URL = 'https://apps.apple.com/app/id000000000'

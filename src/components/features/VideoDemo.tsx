@@ -1,6 +1,7 @@
 import { useState } from 'react'
 // No local video asset — use a hosted URL or upload drape.mp4 to src/assets to enable playback
-const DEMO_VIDEO_URL = ''
+import drapeVideo from '@/assets/drape.mp4'
+
 
 export default function VideoDemo() {
   const [playing, setPlaying] = useState(false)
@@ -88,10 +89,10 @@ export default function VideoDemo() {
             </div>
           ) : (
             <div className="aspect-video bg-[#020203] flex items-center justify-center">
-              {DEMO_VIDEO_URL ? (
+              {drapeVideo ? (
                 <video
                   className="w-full h-full object-cover"
-                  src={DEMO_VIDEO_URL}
+                  src={drapeVideo}
                   autoPlay
                   loop
                   playsInline
