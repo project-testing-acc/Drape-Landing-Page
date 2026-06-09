@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import drapeVideo from '@/assets/drape.mp4'
+// No local video asset — use a hosted URL or upload drape.mp4 to src/assets to enable playback
+const DEMO_VIDEO_URL = ''
 
 export default function VideoDemo() {
   const [playing, setPlaying] = useState(false)
@@ -86,14 +87,26 @@ export default function VideoDemo() {
               </div>
             </div>
           ) : (
-            <div className="aspect-video bg-[#020203]">
-              <video
-                className="w-full h-full object-cover"
-                src={drapeVideo}
-                autoPlay
-                loop
-                playsInline
-              />
+            <div className="aspect-video bg-[#020203] flex items-center justify-center">
+              {DEMO_VIDEO_URL ? (
+                <video
+                  className="w-full h-full object-cover"
+                  src={DEMO_VIDEO_URL}
+                  autoPlay
+                  loop
+                  playsInline
+                />
+              ) : (
+                <div className="flex flex-col items-center gap-3">
+                  <p className="text-[#8A8F98] text-sm">Demo video coming soon</p>
+                  <button
+                    onClick={() => setPlaying(false)}
+                    className="text-xs text-[#7B2FFF] hover:text-[#8C46FF] transition-colors"
+                  >
+                    ← Back
+                  </button>
+                </div>
+              )}
             </div>
           )}
         </div>
