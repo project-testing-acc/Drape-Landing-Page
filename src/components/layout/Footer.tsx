@@ -21,7 +21,7 @@ export default function Footer() {
             <a href="#" className="flex items-center gap-2.5 mb-4">
               <div
                 className="w-7 h-7 rounded-lg flex items-center justify-center text-white font-semibold text-sm"
-                style={{ background: 'linear-gradient(135deg, #5E6AD2, #818cf8)' }}
+                style={{ background: 'linear-gradient(135deg, #7B2FFF, #818cf8)' }}
               >
                 D
               </div>
@@ -77,10 +77,10 @@ export default function Footer() {
                 <a
                   key={s.name}
                   href="#"
-                  className="w-8 h-8 rounded-lg flex items-center justify-center text-[#8A8F98] hover:text-[#5E6AD2] transition-all duration-200"
+                  className="w-8 h-8 rounded-lg flex items-center justify-center text-[#8A8F98] hover:text-[#7B2FFF] transition-all duration-200"
                   style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}
                   aria-label={s.name}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(94,106,210,0.3)' }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(123,47,255,0.3)' }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.06)' }}
                 >
                   <span className="text-[10px] font-bold">{s.label}</span>
@@ -98,7 +98,7 @@ export default function Footer() {
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-[#8A8F98] hover:text-[#5E6AD2] text-sm transition-colors duration-200"
+                      className="text-[#8A8F98] hover:text-[#7B2FFF] text-sm transition-colors duration-200"
                     >
                       {link}
                     </a>
@@ -115,7 +115,7 @@ export default function Footer() {
             © 2026 Drape Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#5E6AD2] animate-pulse" />
+            <div className="w-1.5 h-1.5 rounded-full bg-[#7B2FFF] animate-pulse" />
             <span className="text-[#8A8F98]/40 text-sm">All systems operational</span>
           </div>
         </div>

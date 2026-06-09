@@ -44,7 +44,7 @@ export default function Hero() {
       {/* Animated ambient blobs */}
       <div
         className="blob-a absolute top-[-10%] left-1/2 -translate-x-1/2 w-[900px] h-[700px] rounded-full pointer-events-none"
-        style={{ background: 'rgba(94,106,210,0.18)', filter: 'blur(140px)' }}
+        style={{ background: 'rgba(123,47,255,0.18)', filter: 'blur(140px)' }}
       />
       <div
         className="blob-b absolute top-[20%] left-[-10%] w-[500px] h-[600px] rounded-full pointer-events-none"
@@ -52,7 +52,7 @@ export default function Hero() {
       />
       <div
         className="blob-c absolute top-[30%] right-[-8%] w-[450px] h-[500px] rounded-full pointer-events-none"
-        style={{ background: 'rgba(94,106,210,0.08)', filter: 'blur(100px)' }}
+        style={{ background: 'rgba(123,47,255,0.08)', filter: 'blur(100px)' }}
       />
 
       {/* Content */}
@@ -96,18 +96,18 @@ export default function Hero() {
                 href="#waitlist"
                 className="text-sm font-semibold text-white px-6 py-3 rounded-lg transition-all duration-200 active:scale-[0.98]"
                 style={{
-                  background: '#5E6AD2',
-                  boxShadow: '0 0 0 1px rgba(94,106,210,0.5), 0 4px 16px rgba(94,106,210,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)',
+                  background: '#7B2FFF',
+                  boxShadow: '0 0 0 1px rgba(123,47,255,0.5), 0 4px 16px rgba(123,47,255,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)',
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLElement
-                  el.style.background = '#6872D9'
-                  el.style.boxShadow = '0 0 0 1px rgba(94,106,210,0.6), 0 8px 24px rgba(94,106,210,0.45), inset 0 1px 0 0 rgba(255,255,255,0.2)'
+                  el.style.background = '#8C46FF'
+                  el.style.boxShadow = '0 0 0 1px rgba(123,47,255,0.6), 0 8px 24px rgba(123,47,255,0.45), inset 0 1px 0 0 rgba(255,255,255,0.2)'
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget as HTMLElement
-                  el.style.background = '#5E6AD2'
-                  el.style.boxShadow = '0 0 0 1px rgba(94,106,210,0.5), 0 4px 16px rgba(94,106,210,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)'
+                  el.style.background = '#7B2FFF'
+                  el.style.boxShadow = '0 0 0 1px rgba(123,47,255,0.5), 0 4px 16px rgba(123,47,255,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)'
                 }}
               >
                 Join Waitlist — Free
@@ -120,7 +120,7 @@ export default function Hero() {
                   className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
                 >
-                  <svg className="w-3.5 h-3.5 text-[#5E6AD2] ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-3.5 h-3.5 text-[#7B2FFF] ml-0.5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </div>
@@ -160,7 +160,7 @@ export default function Hero() {
                   className="flex items-center gap-3 px-4 py-2.5 rounded-xl border border-white/[0.08] text-[#8A8F98] hover:text-[#EDEDEF] hover:border-white/[0.14] transition-all duration-200 group"
                   style={{ background: 'rgba(255,255,255,0.04)' }}
                 >
-                  <span className="group-hover:text-[#5E6AD2] transition-colors">{b.icon}</span>
+                  <span className="group-hover:text-[#7B2FFF] transition-colors">{b.icon}</span>
                   <div>
                     <p className="text-[10px] text-[#8A8F98]/60">{b.sub}</p>
                     <p className="text-sm font-medium leading-tight">{b.label}</p>
@@ -175,7 +175,7 @@ export default function Hero() {
             {/* Glow behind phone */}
             <div
               className="absolute w-72 h-72 rounded-full pointer-events-none"
-              style={{ background: 'rgba(94,106,210,0.15)', filter: 'blur(80px)' }}
+              style={{ background: 'rgba(123,47,255,0.15)', filter: 'blur(80px)' }}
             />
 
             <div className="relative z-10 w-60 md:w-72 lg:w-80 h-[500px] md:h-[600px] lg:h-[600px] mx-auto">
@@ -185,18 +185,18 @@ export default function Hero() {
 
               {/* Floating card — top left */}
               <div
-                className="absolute -left-10 rounded-2xl px-4 py-3 flex items-center gap-3 border border-[rgba(94,106,210,0.25)]"
+                className="absolute -left-10 rounded-2xl px-4 py-3 flex items-center gap-3 border border-[rgba(123,47,255,0.25)]"
                 style={{
-                  background: 'rgba(94,106,210,0.10)',
+                  background: 'rgba(123,47,255,0.10)',
                   backdropFilter: 'blur(20px)',
-                  boxShadow: '0 0 0 1px rgba(94,106,210,0.2), 0 4px 20px rgba(0,0,0,0.3)',
+                  boxShadow: '0 0 0 1px rgba(123,47,255,0.2), 0 4px 20px rgba(0,0,0,0.3)',
                 }}
               >
                 <div
                   className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{ background: 'rgba(255,255,255,0.07)' }}
                 >
-                  <svg className="w-4 h-4 text-[#5E6AD2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#7B2FFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
@@ -218,7 +218,7 @@ export default function Hero() {
                 <p className="text-[#8A8F98] text-[10px] mb-1 tracking-widest uppercase">Try-ons today</p>
                 <div className="flex items-end gap-1">
                   <span className="text-2xl font-semibold text-[#EDEDEF] tracking-tight">48K</span>
-                  <span className="text-[#5E6AD2] text-xs mb-0.5">+12%</span>
+                  <span className="text-[#7B2FFF] text-xs mb-0.5">+12%</span>
                 </div>
               </div>
             </div>
@@ -232,7 +232,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
         <span className="text-[#8A8F98]/40 text-[10px] tracking-[0.2em] uppercase">Scroll</span>
-        <div className="w-px h-8 bg-gradient-to-b from-[rgba(94,106,210,0.6)] to-transparent" />
+        <div className="w-px h-8 bg-gradient-to-b from-[rgba(123,47,255,0.6)] to-transparent" />
       </div>
     </section>
   )

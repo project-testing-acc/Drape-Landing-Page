@@ -96,14 +96,14 @@ function SpotlightCard({
       }}
       onMouseEnter={(e) => {
         const el = e.currentTarget as HTMLElement
-        el.style.boxShadow = '0 0 0 1px rgba(255,255,255,0.10), 0 8px 40px rgba(0,0,0,0.45), 0 0 60px rgba(94,106,210,0.08)'
+        el.style.boxShadow = '0 0 0 1px rgba(255,255,255,0.10), 0 8px 40px rgba(0,0,0,0.45), 0 0 60px rgba(123,47,255,0.08)'
       }}
     >
       {/* Mouse spotlight */}
       <div
         className="pointer-events-none absolute inset-0 rounded-2xl transition-opacity duration-300"
         style={{
-          background: `radial-gradient(300px circle at ${spotlight.x}px ${spotlight.y}px, rgba(94,106,210,0.12), transparent)`,
+          background: `radial-gradient(300px circle at ${spotlight.x}px ${spotlight.y}px, rgba(123,47,255,0.12), transparent)`,
           opacity: spotlight.opacity,
         }}
       />
@@ -117,7 +117,7 @@ export default function Features() {
     <section id="features" className="py-32 relative overflow-hidden">
       <div
         className="absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{ background: 'rgba(94,106,210,0.05)', filter: 'blur(100px)' }}
+        style={{ background: 'rgba(123,47,255,0.05)', filter: 'blur(100px)' }}
       />
 
       <div className="max-w-6xl mx-auto px-6">
@@ -139,8 +139,8 @@ export default function Features() {
           {/* Card 1 — normal */}
           <SpotlightCard className="reveal delay-100 p-7 flex flex-col justify-between">
             <div
-              className="w-10 h-10 rounded-xl flex items-center justify-center text-[#5E6AD2]"
-              style={{ background: 'rgba(94,106,210,0.12)', border: '1px solid rgba(94,106,210,0.2)' }}
+              className="w-10 h-10 rounded-xl flex items-center justify-center text-[#7B2FFF]"
+              style={{ background: 'rgba(123,47,255,0.12)', border: '1px solid rgba(123,47,255,0.2)' }}
             >
               {features[0].icon}
             </div>
@@ -157,14 +157,14 @@ export default function Features() {
           >
             <div className="flex items-start justify-between">
               <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center text-[#5E6AD2]"
-                style={{ background: 'rgba(94,106,210,0.12)', border: '1px solid rgba(94,106,210,0.2)' }}
+                className="w-10 h-10 rounded-xl flex items-center justify-center text-[#7B2FFF]"
+                style={{ background: 'rgba(123,47,255,0.12)', border: '1px solid rgba(123,47,255,0.2)' }}
               >
                 {features[1].icon}
               </div>
               <span
-                className="px-2.5 py-1 rounded-full text-[10px] font-semibold text-[#5E6AD2] tracking-widest uppercase"
-                style={{ background: 'rgba(94,106,210,0.12)', border: '1px solid rgba(94,106,210,0.2)' }}
+                className="px-2.5 py-1 rounded-full text-[10px] font-semibold text-[#7B2FFF] tracking-widest uppercase"
+                style={{ background: 'rgba(123,47,255,0.12)', border: '1px solid rgba(123,47,255,0.2)' }}
               >
                 Core Engine
               </span>
@@ -174,9 +174,9 @@ export default function Features() {
               <div className="mb-3 flex items-center gap-3">
                 <div
                   className="h-px flex-1"
-                  style={{ background: 'linear-gradient(90deg, rgba(94,106,210,0.4), transparent)' }}
+                  style={{ background: 'linear-gradient(90deg, rgba(123,47,255,0.4), transparent)' }}
                 />
-                <span className="text-[#5E6AD2] text-xs font-mono tracking-widest">98.4% accuracy</span>
+                <span className="text-[#7B2FFF] text-xs font-mono tracking-widest">98.4% accuracy</span>
               </div>
               <h3 className="text-[#EDEDEF] font-semibold text-2xl md:text-3xl tracking-tight mb-3">
                 {features[1].title}
@@ -199,8 +199,8 @@ export default function Features() {
           {/* Card 3 */}
           <SpotlightCard className="reveal delay-200 p-7 flex flex-col justify-between">
             <div
-              className="w-10 h-10 rounded-xl flex items-center justify-center text-[#5E6AD2]"
-              style={{ background: 'rgba(94,106,210,0.12)', border: '1px solid rgba(94,106,210,0.2)' }}
+              className="w-10 h-10 rounded-xl flex items-center justify-center text-[#7B2FFF]"
+              style={{ background: 'rgba(123,47,255,0.12)', border: '1px solid rgba(123,47,255,0.2)' }}
             >
               {features[2].icon}
             </div>
@@ -213,8 +213,8 @@ export default function Features() {
           {/* Card 4 */}
           <SpotlightCard className="reveal delay-300 p-7 flex flex-col justify-between">
             <div
-              className="w-10 h-10 rounded-xl flex items-center justify-center text-[#5E6AD2]"
-              style={{ background: 'rgba(94,106,210,0.12)', border: '1px solid rgba(94,106,210,0.2)' }}
+              className="w-10 h-10 rounded-xl flex items-center justify-center text-[#7B2FFF]"
+              style={{ background: 'rgba(123,47,255,0.12)', border: '1px solid rgba(123,47,255,0.2)' }}
             >
               {features[3].icon}
             </div>
@@ -227,8 +227,8 @@ export default function Features() {
           {/* Card 5 */}
           <SpotlightCard className="reveal delay-400 p-7 flex flex-col justify-between">
             <div
-              className="w-10 h-10 rounded-xl flex items-center justify-center text-[#5E6AD2]"
-              style={{ background: 'rgba(94,106,210,0.12)', border: '1px solid rgba(94,106,210,0.2)' }}
+              className="w-10 h-10 rounded-xl flex items-center justify-center text-[#7B2FFF]"
+              style={{ background: 'rgba(123,47,255,0.12)', border: '1px solid rgba(123,47,255,0.2)' }}
             >
               {features[4].icon}
             </div>
@@ -251,8 +251,8 @@ export default function Features() {
             />
             <div className="relative z-10 p-7 h-full flex flex-col justify-between">
               <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center text-[#5E6AD2]"
-                style={{ background: 'rgba(94,106,210,0.12)', border: '1px solid rgba(94,106,210,0.2)' }}
+                className="w-10 h-10 rounded-xl flex items-center justify-center text-[#7B2FFF]"
+                style={{ background: 'rgba(123,47,255,0.12)', border: '1px solid rgba(123,47,255,0.2)' }}
               >
                 {features[5].icon}
               </div>

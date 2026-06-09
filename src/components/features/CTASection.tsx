@@ -7,7 +7,7 @@ export default function CTASection() {
       {/* Background blob */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full pointer-events-none"
-        style={{ background: 'rgba(94,106,210,0.08)', filter: 'blur(120px)' }}
+        style={{ background: 'rgba(123,47,255,0.08)', filter: 'blur(120px)' }}
       />
 
       <div className="max-w-4xl mx-auto relative reveal-scale">
@@ -15,20 +15,20 @@ export default function CTASection() {
           className="rounded-2xl p-12 md:p-20 text-center relative overflow-hidden border border-white/[0.08]"
           style={{
             background: 'rgba(255,255,255,0.04)',
-            boxShadow: '0 0 0 1px rgba(255,255,255,0.08), 0 8px 60px rgba(0,0,0,0.5), 0 0 120px rgba(94,106,210,0.10)',
+            boxShadow: '0 0 0 1px rgba(255,255,255,0.08), 0 8px 60px rgba(0,0,0,0.5), 0 0 120px rgba(123,47,255,0.10)',
           }}
         >
           {/* Top accent */}
           <div
             className="absolute top-0 left-0 right-0 h-px"
-            style={{ background: 'linear-gradient(90deg, transparent, rgba(94,106,210,0.6), transparent)' }}
+            style={{ background: 'linear-gradient(90deg, transparent, rgba(123,47,255,0.6), transparent)' }}
           />
           {/* Grid */}
           <div className="absolute inset-0 bg-grid pointer-events-none" />
           {/* Corner glow */}
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[200px] pointer-events-none"
-            style={{ background: 'rgba(94,106,210,0.12)', filter: 'blur(60px)', transform: 'translate(-50%, -40%)' }}
+            style={{ background: 'rgba(123,47,255,0.12)', filter: 'blur(60px)', transform: 'translate(-50%, -40%)' }}
           />
 
           <p className="label-tag mb-6 relative">Your wardrobe, reimagined</p>
@@ -49,18 +49,18 @@ export default function CTASection() {
               href="#waitlist"
               className="text-sm font-semibold text-white px-8 py-3.5 rounded-lg transition-all duration-200 active:scale-[0.98] w-full sm:w-auto text-center"
               style={{
-                background: '#5E6AD2',
-                boxShadow: '0 0 0 1px rgba(94,106,210,0.5), 0 4px 16px rgba(94,106,210,0.4), inset 0 1px 0 0 rgba(255,255,255,0.15)',
+                background: '#7B2FFF',
+                boxShadow: '0 0 0 1px rgba(123,47,255,0.5), 0 4px 16px rgba(123,47,255,0.4), inset 0 1px 0 0 rgba(255,255,255,0.15)',
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLElement
-                el.style.background = '#6872D9'
-                el.style.boxShadow = '0 0 0 1px rgba(94,106,210,0.6), 0 8px 24px rgba(94,106,210,0.5), inset 0 1px 0 0 rgba(255,255,255,0.2)'
+                el.style.background = '#8C46FF'
+                el.style.boxShadow = '0 0 0 1px rgba(123,47,255,0.6), 0 8px 24px rgba(123,47,255,0.5), inset 0 1px 0 0 rgba(255,255,255,0.2)'
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLElement
-                el.style.background = '#5E6AD2'
-                el.style.boxShadow = '0 0 0 1px rgba(94,106,210,0.5), 0 4px 16px rgba(94,106,210,0.4), inset 0 1px 0 0 rgba(255,255,255,0.15)'
+                el.style.background = '#7B2FFF'
+                el.style.boxShadow = '0 0 0 1px rgba(123,47,255,0.5), 0 4px 16px rgba(123,47,255,0.4), inset 0 1px 0 0 rgba(255,255,255,0.15)'
               }}
             >
               Join Waitlist — Free
@@ -105,7 +105,7 @@ export default function CTASection() {
                 className="flex items-center gap-3 px-5 py-3 rounded-xl border border-white/[0.08] text-[#8A8F98] hover:text-[#EDEDEF] hover:border-white/[0.14] transition-all duration-200 group"
                 style={{ background: 'rgba(255,255,255,0.04)' }}
               >
-                <span className="group-hover:text-[#5E6AD2] transition-colors">{b.icon}</span>
+                <span className="group-hover:text-[#7B2FFF] transition-colors">{b.icon}</span>
                 <div className="text-left">
                   <p className="text-[10px] text-[#8A8F98]/50">{b.sub}</p>
                   <p className="text-sm font-semibold">{b.label}</p>

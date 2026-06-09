@@ -51,7 +51,7 @@ export default function AppShowcase() {
                     key={i} 
                     className="relative flex-none w-[260px] md:w-[280px] aspect-[9/19.5] rounded-[2rem] overflow-hidden border border-white/[0.08] transition-all duration-500 hover:-translate-y-2 hover:border-white/[0.2] z-10"
                     style={{
-                      boxShadow: '0 20px 40px -10px rgba(0,0,0,0.5), 0 0 40px rgba(94,106,210,0.1)',
+                      boxShadow: '0 20px 40px -10px rgba(0,0,0,0.5), 0 0 40px rgba(123,47,255,0.1)',
                       background: 'rgba(255,255,255,0.02)'
                     }}
                   >

@@ -39,7 +39,7 @@ export default function WaitlistForm() {
     <section id="waitlist" className="py-32 px-6 relative overflow-hidden">
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full pointer-events-none"
-        style={{ background: 'rgba(94,106,210,0.06)', filter: 'blur(100px)' }}
+        style={{ background: 'rgba(123,47,255,0.06)', filter: 'blur(100px)' }}
       />
 
       <div className="max-w-xl mx-auto relative reveal">
@@ -47,13 +47,13 @@ export default function WaitlistForm() {
           className="rounded-2xl p-10 md:p-12 relative overflow-hidden border border-white/[0.08]"
           style={{
             background: 'rgba(255,255,255,0.04)',
-            boxShadow: '0 0 0 1px rgba(255,255,255,0.06), 0 8px 60px rgba(0,0,0,0.5), 0 0 100px rgba(94,106,210,0.08)',
+            boxShadow: '0 0 0 1px rgba(255,255,255,0.06), 0 8px 60px rgba(0,0,0,0.5), 0 0 100px rgba(123,47,255,0.08)',
           }}
         >
           {/* Top accent line */}
           <div
             className="absolute top-0 left-0 right-0 h-px"
-            style={{ background: 'linear-gradient(90deg, transparent, rgba(94,106,210,0.5), transparent)' }}
+            style={{ background: 'linear-gradient(90deg, transparent, rgba(123,47,255,0.5), transparent)' }}
           />
           {/* Subtle grid */}
           <div className="absolute inset-0 bg-grid pointer-events-none" />
@@ -63,13 +63,13 @@ export default function WaitlistForm() {
               <div className="relative w-16 h-16 mx-auto mb-6">
                 <div
                   className="absolute inset-0 rounded-full animate-pulse-ring"
-                  style={{ background: 'rgba(94,106,210,0.15)', transform: 'scale(1.4)' }}
+                  style={{ background: 'rgba(123,47,255,0.15)', transform: 'scale(1.4)' }}
                 />
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center mx-auto"
-                  style={{ background: 'rgba(94,106,210,0.12)', border: '1px solid rgba(94,106,210,0.35)' }}
+                  style={{ background: 'rgba(123,47,255,0.12)', border: '1px solid rgba(123,47,255,0.35)' }}
                 >
-                  <svg className="w-7 h-7 text-[#5E6AD2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-7 h-7 text-[#7B2FFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
@@ -82,7 +82,7 @@ export default function WaitlistForm() {
               </p>
               <button
                 onClick={() => setStatus('idle')}
-                className="mt-6 text-xs text-[#8A8F98] hover:text-[#5E6AD2] transition-colors"
+                className="mt-6 text-xs text-[#8A8F98] hover:text-[#7B2FFF] transition-colors"
               >
                 Add another email →
               </button>
@@ -110,12 +110,12 @@ export default function WaitlistForm() {
                     placeholder="Alex Johnson"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full rounded-lg px-4 py-3 text-sm text-[#EDEDEF] placeholder-[#8A8F98]/40 transition-all duration-200 outline-none focus:ring-2 focus:ring-[#5E6AD2]/40 focus:ring-offset-2 focus:ring-offset-[#050506]"
+                    className="w-full rounded-lg px-4 py-3 text-sm text-[#EDEDEF] placeholder-[#8A8F98]/40 transition-all duration-200 outline-none focus:ring-2 focus:ring-[#7B2FFF]/40 focus:ring-offset-2 focus:ring-offset-[#050506]"
                     style={{
                       background: '#0F0F12',
                       border: '1px solid rgba(255,255,255,0.10)',
                     }}
-                    onFocus={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(94,106,210,0.5)' }}
+                    onFocus={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(123,47,255,0.5)' }}
                     onBlur={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.10)' }}
                   />
                 </div>
@@ -123,7 +123,7 @@ export default function WaitlistForm() {
                 {/* Email */}
                 <div>
                   <label htmlFor="wl-email" className="block text-xs text-[#8A8F98] mb-1.5 tracking-wide">
-                    Email Address <span className="text-[#5E6AD2]">*</span>
+                    Email Address <span className="text-[#7B2FFF]">*</span>
                   </label>
                   <input
                     id="wl-email"
@@ -132,12 +132,12 @@ export default function WaitlistForm() {
                     placeholder="you@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full rounded-lg px-4 py-3 text-sm text-[#EDEDEF] placeholder-[#8A8F98]/40 transition-all duration-200 outline-none focus:ring-2 focus:ring-[#5E6AD2]/40 focus:ring-offset-2 focus:ring-offset-[#050506]"
+                    className="w-full rounded-lg px-4 py-3 text-sm text-[#EDEDEF] placeholder-[#8A8F98]/40 transition-all duration-200 outline-none focus:ring-2 focus:ring-[#7B2FFF]/40 focus:ring-offset-2 focus:ring-offset-[#050506]"
                     style={{
                       background: '#0F0F12',
                       border: '1px solid rgba(255,255,255,0.10)',
                     }}
-                    onFocus={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(94,106,210,0.5)' }}
+                    onFocus={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(123,47,255,0.5)' }}
                     onBlur={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.10)' }}
                   />
                 </div>
@@ -174,8 +174,8 @@ export default function WaitlistForm() {
                         onClick={() => setPlatform(platform === p.value as 'ios' | 'android' ? '' : p.value as 'ios' | 'android')}
                         className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-all duration-200"
                         style={{
-                          background: platform === p.value ? 'rgba(94,106,210,0.12)' : '#0F0F12',
-                          border: `1px solid ${platform === p.value ? 'rgba(94,106,210,0.4)' : 'rgba(255,255,255,0.08)'}`,
+                          background: platform === p.value ? 'rgba(123,47,255,0.12)' : '#0F0F12',
+                          border: `1px solid ${platform === p.value ? 'rgba(123,47,255,0.4)' : 'rgba(255,255,255,0.08)'}`,
                           color: platform === p.value ? '#818cf8' : '#8A8F98',
                         }}
                       >
@@ -188,7 +188,7 @@ export default function WaitlistForm() {
 
                 {/* Errors */}
                 {status === 'duplicate' && (
-                  <p className="text-[#5E6AD2] text-sm flex items-center gap-2">
+                  <p className="text-[#7B2FFF] text-sm flex items-center gap-2">
                     <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -205,18 +205,18 @@ export default function WaitlistForm() {
                   disabled={status === 'loading'}
                   className="w-full py-3.5 rounded-lg font-semibold text-sm text-white transition-all duration-200 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-1"
                   style={{
-                    background: '#5E6AD2',
-                    boxShadow: '0 0 0 1px rgba(94,106,210,0.5), 0 4px 16px rgba(94,106,210,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)',
+                    background: '#7B2FFF',
+                    boxShadow: '0 0 0 1px rgba(123,47,255,0.5), 0 4px 16px rgba(123,47,255,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)',
                   }}
                   onMouseEnter={(e) => {
                     if (status !== 'loading') {
                       const el = e.currentTarget as HTMLElement
-                      el.style.background = '#6872D9'
+                      el.style.background = '#8C46FF'
                     }
                   }}
                   onMouseLeave={(e) => {
                     const el = e.currentTarget as HTMLElement
-                    el.style.background = '#5E6AD2'
+                    el.style.background = '#7B2FFF'
                   }}
                 >
                   {status === 'loading' ? (

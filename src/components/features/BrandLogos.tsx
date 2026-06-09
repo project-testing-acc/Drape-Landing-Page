@@ -17,7 +17,7 @@ export default function BrandLogos() {
           {[...brands, ...brands].map((brand, i) => (
             <span
               key={i}
-              className="text-[#8A8F98]/40 hover:text-[#5E6AD2] transition-colors duration-300 text-base font-semibold tracking-widest cursor-default select-none"
+              className="text-[#8A8F98]/40 hover:text-[#7B2FFF] transition-colors duration-300 text-base font-semibold tracking-widest cursor-default select-none"
             >
               {brand}
             </span>

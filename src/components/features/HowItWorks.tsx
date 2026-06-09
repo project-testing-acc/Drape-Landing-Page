@@ -30,7 +30,7 @@ export default function HowItWorks() {
     <section id="how-it-works" className="py-32 relative overflow-hidden">
       <div
         className="absolute bottom-0 left-0 w-[500px] h-[400px] rounded-full pointer-events-none"
-        style={{ background: 'rgba(94,106,210,0.05)', filter: 'blur(100px)' }}
+        style={{ background: 'rgba(123,47,255,0.05)', filter: 'blur(100px)' }}
       />
 
       <div className="max-w-6xl mx-auto px-6">
@@ -52,7 +52,7 @@ export default function HowItWorks() {
           {/* Vertical line */}
           <div
             className="hidden lg:block absolute left-1/2 top-8 bottom-8 w-px pointer-events-none"
-            style={{ background: 'linear-gradient(to bottom, transparent, rgba(94,106,210,0.3) 20%, rgba(94,106,210,0.3) 80%, transparent)' }}
+            style={{ background: 'linear-gradient(to bottom, transparent, rgba(123,47,255,0.3) 20%, rgba(123,47,255,0.3) 80%, transparent)' }}
           />
 
           <div className="flex flex-col gap-4 lg:gap-0">
@@ -75,7 +75,7 @@ export default function HowItWorks() {
                       }}
                       onMouseEnter={(e) => {
                         const el = e.currentTarget as HTMLElement
-                        el.style.boxShadow = '0 0 0 1px rgba(94,106,210,0.2), 0 8px 40px rgba(0,0,0,0.4), 0 0 60px rgba(94,106,210,0.07)'
+                        el.style.boxShadow = '0 0 0 1px rgba(123,47,255,0.2), 0 8px 40px rgba(0,0,0,0.4), 0 0 60px rgba(123,47,255,0.07)'
                       }}
                       onMouseLeave={(e) => {
                         const el = e.currentTarget as HTMLElement
@@ -84,10 +84,10 @@ export default function HowItWorks() {
                     >
                       <div
                         className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full mb-5"
-                        style={{ background: 'rgba(94,106,210,0.1)', border: '1px solid rgba(94,106,210,0.2)' }}
+                        style={{ background: 'rgba(123,47,255,0.1)', border: '1px solid rgba(123,47,255,0.2)' }}
                       >
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#5E6AD2]" />
-                        <span className="text-[#5E6AD2] text-[10px] font-medium tracking-widest uppercase">{step.tag}</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#7B2FFF]" />
+                        <span className="text-[#7B2FFF] text-[10px] font-medium tracking-widest uppercase">{step.tag}</span>
                       </div>
                       <h3 className="text-[#EDEDEF] font-semibold text-xl tracking-tight mb-3 group-hover:text-white transition-colors">
                         {step.title}
@@ -101,12 +101,12 @@ export default function HowItWorks() {
                     <div
                       className="w-12 h-12 rounded-full flex items-center justify-center"
                       style={{
-                        background: 'rgba(94,106,210,0.10)',
-                        border: '1px solid rgba(94,106,210,0.30)',
-                        boxShadow: '0 0 0 4px rgba(94,106,210,0.06)',
+                        background: 'rgba(123,47,255,0.10)',
+                        border: '1px solid rgba(123,47,255,0.30)',
+                        boxShadow: '0 0 0 4px rgba(123,47,255,0.06)',
                       }}
                     >
-                      <span className="text-[#5E6AD2] font-semibold text-sm font-mono">{step.number}</span>
+                      <span className="text-[#7B2FFF] font-semibold text-sm font-mono">{step.number}</span>
                     </div>
                   </div>
 
@@ -122,18 +122,18 @@ export default function HowItWorks() {
             href="#waitlist"
             className="inline-block text-sm font-semibold text-white px-8 py-3.5 rounded-lg transition-all duration-200 active:scale-[0.98]"
             style={{
-              background: '#5E6AD2',
-              boxShadow: '0 0 0 1px rgba(94,106,210,0.5), 0 4px 16px rgba(94,106,210,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)',
+              background: '#7B2FFF',
+              boxShadow: '0 0 0 1px rgba(123,47,255,0.5), 0 4px 16px rgba(123,47,255,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)',
             }}
             onMouseEnter={(e) => {
               const el = e.currentTarget as HTMLElement
-              el.style.background = '#6872D9'
-              el.style.boxShadow = '0 0 0 1px rgba(94,106,210,0.6), 0 8px 24px rgba(94,106,210,0.45), inset 0 1px 0 0 rgba(255,255,255,0.2)'
+              el.style.background = '#8C46FF'
+              el.style.boxShadow = '0 0 0 1px rgba(123,47,255,0.6), 0 8px 24px rgba(123,47,255,0.45), inset 0 1px 0 0 rgba(255,255,255,0.2)'
             }}
             onMouseLeave={(e) => {
               const el = e.currentTarget as HTMLElement
-              el.style.background = '#5E6AD2'
-              el.style.boxShadow = '0 0 0 1px rgba(94,106,210,0.5), 0 4px 16px rgba(94,106,210,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)'
+              el.style.background = '#7B2FFF'
+              el.style.boxShadow = '0 0 0 1px rgba(123,47,255,0.5), 0 4px 16px rgba(123,47,255,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)'
             }}
           >
             Start Trying On Now

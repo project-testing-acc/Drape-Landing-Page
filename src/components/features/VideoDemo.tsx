@@ -8,7 +8,7 @@ export default function VideoDemo() {
     <section className="py-24 px-6 relative overflow-hidden">
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full pointer-events-none"
-        style={{ background: 'rgba(94,106,210,0.05)', filter: 'blur(100px)' }}
+        style={{ background: 'rgba(123,47,255,0.05)', filter: 'blur(100px)' }}
       />
 
       <div className="max-w-5xl mx-auto">
@@ -24,12 +24,12 @@ export default function VideoDemo() {
         {/* Video frame */}
         <div
           className="relative rounded-2xl overflow-hidden reveal-scale border border-white/[0.06]"
-          style={{ boxShadow: '0 0 0 1px rgba(255,255,255,0.06), 0 8px 60px rgba(0,0,0,0.6), 0 0 100px rgba(94,106,210,0.08)' }}
+          style={{ boxShadow: '0 0 0 1px rgba(255,255,255,0.06), 0 8px 60px rgba(0,0,0,0.6), 0 0 100px rgba(123,47,255,0.08)' }}
         >
           {/* Top accent line */}
           <div
             className="absolute top-0 left-0 right-0 h-px"
-            style={{ background: 'linear-gradient(90deg, transparent, rgba(94,106,210,0.5), transparent)' }}
+            style={{ background: 'linear-gradient(90deg, transparent, rgba(123,47,255,0.5), transparent)' }}
           />
 
           {!playing ? (
@@ -54,13 +54,13 @@ export default function VideoDemo() {
                 <div className="relative group-hover:-translate-y-1 transition-transform duration-300">
                   <div
                     className="absolute inset-0 rounded-full animate-pulse-ring"
-                    style={{ background: 'rgba(94,106,210,0.2)', transform: 'scale(1.4)' }}
+                    style={{ background: 'rgba(123,47,255,0.2)', transform: 'scale(1.4)' }}
                   />
                   <div
                     className="relative w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
                     style={{
-                      background: '#5E6AD2',
-                      boxShadow: '0 0 0 1px rgba(94,106,210,0.6), 0 4px 24px rgba(94,106,210,0.5), inset 0 1px 0 0 rgba(255,255,255,0.2)',
+                      background: '#7B2FFF',
+                      boxShadow: '0 0 0 1px rgba(123,47,255,0.6), 0 4px 24px rgba(123,47,255,0.5), inset 0 1px 0 0 rgba(255,255,255,0.2)',
                     }}
                   >
                     <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
@@ -77,10 +77,10 @@ export default function VideoDemo() {
               {/* Live badge */}
               <div className="absolute top-4 left-4">
                 <span
-                  className="flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-semibold text-[#5E6AD2] tracking-widest uppercase"
-                  style={{ background: 'rgba(94,106,210,0.12)', border: '1px solid rgba(94,106,210,0.3)' }}
+                  className="flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-semibold text-[#7B2FFF] tracking-widest uppercase"
+                  style={{ background: 'rgba(123,47,255,0.12)', border: '1px solid rgba(123,47,255,0.3)' }}
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#5E6AD2] animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#7B2FFF] animate-pulse" />
                   LIVE DEMO
                 </span>
               </div>

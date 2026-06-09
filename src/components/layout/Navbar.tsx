@@ -22,17 +22,16 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#050506]/90 backdrop-blur-xl border-b border-white/[0.06] py-3'
-          : 'bg-transparent py-5'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? 'bg-[#050506]/90 backdrop-blur-xl border-b border-white/[0.06] py-3'
+        : 'bg-transparent py-5'
+        }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
           <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-lg"
+            className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden"
             style={{
               background: 'linear-gradient(135deg, #5E6AD2, #818cf8)',
               boxShadow: '0 0 18px rgba(94,106,210,0.35)',
@@ -71,15 +70,15 @@ export default function Navbar() {
             className="text-sm font-semibold text-white px-4 py-2 rounded-lg transition-all duration-200 active:scale-[0.98]"
             style={{
               background: '#7B2FFF',
-              boxShadow: '0 0 0 1px rgba(144, 94, 210, 0.5), 0 4px 12px rgba(94,106,210,0.3), inset 0 1px 0 0 rgba(255,255,255,0.15)',
+              boxShadow: '0 0 0 1px rgba(123, 47, 255, 0.5), 0 4px 12px rgba(123,47,255,0.3), inset 0 1px 0 0 rgba(255,255,255,0.15)',
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = '#7B2FFF'
-              ;(e.currentTarget as HTMLElement).style.boxShadow = '0 0 0 1px rgba(94,106,210,0.6), 0 6px 20px rgba(94,106,210,0.4), inset 0 1px 0 0 rgba(255,255,255,0.2)'
+              (e.currentTarget as HTMLElement).style.background = '#8C46FF'
+                ; (e.currentTarget as HTMLElement).style.boxShadow = '0 0 0 1px rgba(123,47,255,0.6), 0 6px 20px rgba(123,47,255,0.4), inset 0 1px 0 0 rgba(255,255,255,0.2)'
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.background = '#5E6AD2'
-              ;(e.currentTarget as HTMLElement).style.boxShadow = '0 0 0 1px rgba(94,106,210,0.5), 0 4px 12px rgba(94,106,210,0.3), inset 0 1px 0 0 rgba(255,255,255,0.15)'
+              (e.currentTarget as HTMLElement).style.background = '#7B2FFF'
+                ; (e.currentTarget as HTMLElement).style.boxShadow = '0 0 0 1px rgba(123,47,255,0.5), 0 4px 12px rgba(123,47,255,0.3), inset 0 1px 0 0 rgba(255,255,255,0.15)'
             }}
           >
             Join Waitlist
@@ -121,8 +120,8 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               className="w-full text-center block text-sm font-semibold text-white py-2.5 rounded-lg"
               style={{
-                background: '#5E6AD2',
-                boxShadow: '0 0 0 1px rgba(94,106,210,0.5), 0 4px 12px rgba(94,106,210,0.3)',
+                background: '#7B2FFF',
+                boxShadow: '0 0 0 1px rgba(123,47,255,0.5), 0 4px 12px rgba(123,47,255,0.3)',
               }}
             >
               Join Waitlist — Free

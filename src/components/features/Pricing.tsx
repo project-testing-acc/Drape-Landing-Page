@@ -57,7 +57,7 @@ export default function Pricing() {
     <section id="pricing" className="py-32 relative overflow-hidden">
       <div
         className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full pointer-events-none"
-        style={{ background: 'rgba(94,106,210,0.05)', filter: 'blur(100px)' }}
+        style={{ background: 'rgba(123,47,255,0.05)', filter: 'blur(100px)' }}
       />
 
       <div className="max-w-6xl mx-auto px-6">
@@ -85,8 +85,8 @@ export default function Pricing() {
                   : 'text-[#8A8F98] hover:text-[#EDEDEF]'
               }`}
               style={!yearly ? {
-                background: '#5E6AD2',
-                boxShadow: '0 0 0 1px rgba(94,106,210,0.4), 0 2px 8px rgba(94,106,210,0.3)',
+                background: '#7B2FFF',
+                boxShadow: '0 0 0 1px rgba(123,47,255,0.4), 0 2px 8px rgba(123,47,255,0.3)',
               } : {}}
             >
               Monthly
@@ -99,14 +99,14 @@ export default function Pricing() {
                   : 'text-[#8A8F98] hover:text-[#EDEDEF]'
               }`}
               style={yearly ? {
-                background: '#5E6AD2',
-                boxShadow: '0 0 0 1px rgba(94,106,210,0.4), 0 2px 8px rgba(94,106,210,0.3)',
+                background: '#7B2FFF',
+                boxShadow: '0 0 0 1px rgba(123,47,255,0.4), 0 2px 8px rgba(123,47,255,0.3)',
               } : {}}
             >
               Yearly
               <span
                 className="text-[9px] font-bold px-1.5 py-0.5 rounded-full"
-                style={{ background: 'rgba(94,106,210,0.2)', color: yearly ? '#ffffffff' : '#818cf8' }}
+                style={{ background: 'rgba(123,47,255,0.2)', color: yearly ? '#ffffffff' : '#818cf8' }}
               >
                 -20%
               </span>
@@ -123,10 +123,10 @@ export default function Pricing() {
                 plan.highlight ? 'md:-mt-3 md:-mb-3' : ''
               }`}
               style={{
-                background: plan.highlight ? 'rgba(94,106,210,0.08)' : 'rgba(255,255,255,0.04)',
-                border: `1px solid ${plan.highlight ? 'rgba(94,106,210,0.3)' : 'rgba(255,255,255,0.06)'}`,
+                background: plan.highlight ? 'rgba(123,47,255,0.08)' : 'rgba(255,255,255,0.04)',
+                border: `1px solid ${plan.highlight ? 'rgba(123,47,255,0.3)' : 'rgba(255,255,255,0.06)'}`,
                 boxShadow: plan.highlight
-                  ? '0 0 0 1px rgba(94,106,210,0.3), 0 8px 40px rgba(0,0,0,0.5), 0 0 80px rgba(94,106,210,0.10)'
+                  ? '0 0 0 1px rgba(123,47,255,0.3), 0 8px 40px rgba(0,0,0,0.5), 0 0 80px rgba(123,47,255,0.10)'
                   : '0 0 0 1px rgba(255,255,255,0.06), 0 2px 20px rgba(0,0,0,0.3)',
               }}
             >
@@ -134,15 +134,15 @@ export default function Pricing() {
               {plan.highlight && (
                 <div
                   className="absolute top-0 left-0 right-0 h-px"
-                  style={{ background: 'linear-gradient(90deg, transparent, rgba(94,106,210,0.6), transparent)' }}
+                  style={{ background: 'linear-gradient(90deg, transparent, rgba(123,47,255,0.6), transparent)' }}
                 />
               )}
 
               {plan.highlight && (
                 <div className="absolute top-4 right-5">
                   <span
-                    className="text-[10px] font-semibold text-[#5E6AD2] px-2.5 py-1 rounded-full tracking-widest uppercase"
-                    style={{ background: 'rgba(94,106,210,0.15)', border: '1px solid rgba(94,106,210,0.3)' }}
+                    className="text-[10px] font-semibold text-[#7B2FFF] px-2.5 py-1 rounded-full tracking-widest uppercase"
+                    style={{ background: 'rgba(123,47,255,0.15)', border: '1px solid rgba(123,47,255,0.3)' }}
                   >
                     Popular
                   </span>
@@ -169,7 +169,7 @@ export default function Pricing() {
                   <span className="text-[#8A8F98] text-xs">Forever free</span>
                 )}
                 {yearly && plan.price.monthly > 0 && (
-                  <p className="text-[#5E6AD2] text-xs mt-1">
+                  <p className="text-[#7B2FFF] text-xs mt-1">
                     Save ${((plan.price.monthly - plan.price.yearly) * 12).toFixed(0)}/year
                   </p>
                 )}
@@ -181,9 +181,9 @@ export default function Pricing() {
                   <li key={j} className="flex items-start gap-2.5">
                     <div
                       className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                      style={{ background: plan.highlight ? 'rgba(94,106,210,0.15)' : 'rgba(255,255,255,0.06)' }}
+                      style={{ background: plan.highlight ? 'rgba(123,47,255,0.15)' : 'rgba(255,255,255,0.06)' }}
                     >
-                      <Check className="w-2.5 h-2.5 text-[#5E6AD2]" />
+                      <Check className="w-2.5 h-2.5 text-[#7B2FFF]" />
                     </div>
                     <span className="text-[#8A8F98] text-sm leading-relaxed">{f}</span>
                   </li>
@@ -196,8 +196,8 @@ export default function Pricing() {
                   plan.highlight ? 'text-white' : 'text-[#8A8F98] hover:text-[#EDEDEF]'
                 }`}
                 style={plan.highlight ? {
-                  background: '#5E6AD2',
-                  boxShadow: '0 0 0 1px rgba(94,106,210,0.5), 0 4px 12px rgba(94,106,210,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)',
+                  background: '#7B2FFF',
+                  boxShadow: '0 0 0 1px rgba(123,47,255,0.5), 0 4px 12px rgba(123,47,255,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)',
                 } : {
                   background: 'rgba(255,255,255,0.05)',
                   border: '1px solid rgba(255,255,255,0.08)',
@@ -205,8 +205,8 @@ export default function Pricing() {
                 onMouseEnter={(e) => {
                   if (plan.highlight) {
                     const el = e.currentTarget as HTMLElement
-                    el.style.background = '#6872D9'
-                    el.style.boxShadow = '0 0 0 1px rgba(94,106,210,0.6), 0 6px 20px rgba(94,106,210,0.45), inset 0 1px 0 0 rgba(255,255,255,0.2)'
+                    el.style.background = '#8C46FF'
+                    el.style.boxShadow = '0 0 0 1px rgba(123,47,255,0.6), 0 6px 20px rgba(123,47,255,0.45), inset 0 1px 0 0 rgba(255,255,255,0.2)'
                   } else {
                     (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.08)'
                   }
@@ -214,8 +214,8 @@ export default function Pricing() {
                 onMouseLeave={(e) => {
                   if (plan.highlight) {
                     const el = e.currentTarget as HTMLElement
-                    el.style.background = '#5E6AD2'
-                    el.style.boxShadow = '0 0 0 1px rgba(94,106,210,0.5), 0 4px 12px rgba(94,106,210,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)'
+                    el.style.background = '#7B2FFF'
+                    el.style.boxShadow = '0 0 0 1px rgba(123,47,255,0.5), 0 4px 12px rgba(123,47,255,0.35), inset 0 1px 0 0 rgba(255,255,255,0.15)'
                   } else {
                     (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.05)'
                   }
